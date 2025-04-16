@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Blender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Image Blender</h1>
+            <p>Blend your product into any shop environment with AI</p>
+        </header>
+
+        <main>
+            <form id="blendForm">
+                <div class="upload-container">
+                    <div class="upload-section">
+                        <h2>1. Product Image</h2>
+                        <div class="upload-area" id="productUploadArea">
+                            <div class="upload-placeholder" id="productPlaceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p>Drag & drop your product image or click to browse</p>
+                            </div>
+                            <div class="preview-container" id="productPreview">
+                                <img id="productPreviewImg" src="" alt="Product preview">
+                                <button type="button" class="remove-btn" id="removeProductBtn">×</button>
+                            </div>
+                            <input type="file" id="productInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <div class="upload-section">
+                        <h2>2. Shop Vibe Image</h2>
+                        <div class="upload-area" id="shopUploadArea">
+                            <div class="upload-placeholder" id="shopPlaceholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p>Drag & drop your shop vibe image or click to browse</p>
+                            </div>
+                            <div class="preview-container" id="shopPreview">
+                                <img id="shopPreviewImg" src="" alt="Shop vibe preview">
+                                <button type="button" class="remove-btn" id="removeShopBtn">×</button>
+                            </div>
+                            <input type="file" id="shopInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <h2>3. Text Prompt</h2>
+                    <textarea id="promptInput" placeholder="Describe how you want your product to appear in the shop environment (e.g., 'elegant coffee cup on wooden table in a cozy cafe')"></textarea>
+                </div>
+
+                <div class="advanced-options">
+                    <details>
+                        <summary>Advanced Options</summary>
+                        <div class="options-grid">
+                            <div class="option">
+                                <label for="mergeStrength">Merge Strength</label>
+                                <input type="range" id="mergeStrength" min="0.1" max="1" step="0.01" value="0.92">
+                                <span id="mergeStrengthValue">0.92</span>
+                                <small>Lower values increase prompt influence</small>
+                            </div>
+                            <div class="option">
+                                <label for="noiseLevel">Noise Level</label>
+                                <input type="range" id="noiseLevel" min="0" max="1" step="0.01" value="0.8">
+                                <span id="noiseLevelValue">0.8</span>
+                                <small>Higher values allow more prompt control</small>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="submit-section">
+                    <button type="submit" id="generateBtn">Generate AI Image</button>
+                </div>
+            </form>
+
+            <div class="result-section" id="resultSection">
+                <h2>Generated Image</h2>
+                <div class="result-container">
+                    <div class="loading" id="loadingIndicator">
+                        <div class="spinner"></div>
+                        <p>Generating your image... This may take up to 30 seconds.</p>
+                    </div>
+                    <div class="result-image" id="resultImageContainer">
+                        <img id="resultImage" src="" alt="Generated image">
+                        <a id="downloadBtn" href="#" download="ai-blended-image.png" class="download-btn">Download Image</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Replicate AI | <a href="https://replicate.com/fofr/image-merge-sdxl" target="_blank">fofr/image-merge-sdxl</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
