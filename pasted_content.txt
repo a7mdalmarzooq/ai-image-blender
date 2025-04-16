@@ -1,0 +1,20 @@
+1.	Upload one product image (e.g. food, item).
+	2.	Upload one shop vibe image (e.g. restaurant interior or aesthetic).
+	3.	Enter a text prompt (e.g. “romantic date setup with coffee”).
+
+The website should:
+	•	Use these 3 inputs to call a realistic AI image generator API (e.g. Replicate or similar) that can blend the product into the shop vibe with the style of the prompt.
+	•	Return and display a new, enhanced AI-generated image.
+
+Requirements:
+	•	Clean and simple UI with 3 fields: Product image, Shop vibe image, Prompt.
+	•	Image preview for each upload.
+	•	Button: “Generate AI Image”.
+	•	After submission, show the result image in high quality.
+	•	API call should use base64 image encoding if needed.
+	•	Suggest and integrate a free or freemium AI image generator API that supports multi-image + text-to-image input and realistic results.
+
+Technologies:
+	•	Frontend: HTML + CSS + JavaScript (React optional)
+	•	Backend: Node.js with Express or simple serverless function (or suggest better)
+	•	Include instructions for deploying it on Vercel or Netlify
